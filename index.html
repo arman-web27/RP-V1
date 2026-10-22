@@ -1,0 +1,2386 @@
+<!doctype html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#08080C" />
+  <title>Relief Pro — Ayurvedic Herbal Powder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Halant:wght@400;600;700&family=Hind:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+  <style>
+    :root {
+      --bg-dark: #08080C;
+      --bg-card: #121218;
+      --bg-card-alt: #181822;
+      --text-white: #FFFFFF;
+      --muted: #A3A3B5;
+      --gold-accent: #F6C768;
+      --gold-light: #FDE68A;
+      --gold-primary: #D4AF37;
+      --gold-dark: #9A7B1C;
+      --gold-glow: rgba(212, 175, 55, 0.4);
+      --gold-gradient: linear-gradient(135deg, #FDE68A 0%, #F6C768 40%, #D4AF37 75%, #B48C28 100%);
+      --line: rgba(212, 175, 55, 0.22);
+      --w: 450px;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 20px;
+      background: var(--bg-dark);
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-white);
+      font-family: Hind, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a,
+    input {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--gold-accent);
+      outline-offset: 4px;
+    }
+
+    .page {
+      max-width: var(--w);
+      margin: auto;
+      background: var(--bg-dark);
+      min-height: 100vh;
+      padding-bottom: 75px;
+      overflow: hidden;
+      border-inline: 1px solid var(--line);
+      box-shadow: 0 0 60px rgba(0, 0, 0, 0.95);
+    }
+
+    section {
+      padding: 28px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    h1,
+    h2 {
+      font-size: 31px;
+      line-height: 1.25;
+      letter-spacing: -0.4px;
+    }
+
+    h3 {
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-accent);
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      text-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background: var(--gold-accent);
+      box-shadow: 0 0 8px var(--gold-accent);
+    }
+
+    .accent {
+      color: var(--gold-accent);
+      text-shadow: 0 0 18px rgba(246, 199, 104, 0.45);
+    }
+
+    .banner {
+      padding: 0;
+      border: 0;
+      position: relative;
+    }
+
+    .banner img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Symptoms Section */
+    .problem-roadmap {
+      padding: 34px 20px;
+      background: radial-gradient(circle at 50% 0%, #1A1810 0%, var(--bg-dark) 75%);
+    }
+
+    .problem-roadmap>.eyebrow,
+    .problem-roadmap>h2 {
+      text-align: center;
+      display: block;
+    }
+
+    .problem-roadmap>h2 {
+      margin-top: 6px;
+    }
+
+    .symptom-flow {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      margin-top: 26px;
+      gap: 14px;
+    }
+
+    .symptom-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      transition: border-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .symptom-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(212, 175, 55, 0.25);
+    }
+
+    .symptom-card figure {
+      display: flex;
+      flex-direction: row;
+      min-height: 138px;
+      margin: 0;
+    }
+
+    .symptom-photo {
+      flex: 0 0 46%;
+      position: relative;
+      background: #15151D;
+      display: grid;
+      place-items: center;
+      color: var(--gold-accent);
+      border-right: 1px solid var(--line);
+    }
+
+    .symptom-card:nth-of-type(even) .symptom-photo {
+      order: 2;
+      border-right: 0;
+      border-left: 1px solid var(--line);
+    }
+
+    .symptom-card:nth-of-type(even) figcaption {
+      order: 1;
+    }
+
+    .symptom-photo i {
+      font-size: 32px !important;
+      color: var(--gold-accent);
+      opacity: 0.85;
+    }
+
+    .symptom-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .symptom-card figcaption {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #13131A, #0C0C10);
+      gap: 6px;
+    }
+
+    .symptom-node {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--gold-accent);
+    }
+
+    .symptom-card h3 {
+      font-size: 18px !important;
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--text-white);
+    }
+
+    /* Product Section */
+    #product-intro {
+      background: radial-gradient(ellipse at 50% 20%, #1A1710 0%, var(--bg-dark) 70%);
+      padding-block: 40px;
+    }
+
+    #product-intro>.eyebrow,
+    #product-intro>h2 {
+      text-align: center;
+      display: block;
+    }
+
+    .earcare-poster {
+      margin-top: 26px;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .earcare-poster-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 20px 4px;
+      display: none;
+    }
+
+    .earcare-wordmark {
+      color: var(--text-white);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .earcare-wordmark>span {
+      color: var(--gold-accent);
+    }
+
+    .earcare-poster-label {
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 10px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.4;
+      letter-spacing: 1.5px;
+    }
+
+    .earcare-orbit {
+      padding: 20px 16px 0;
+    }
+
+    .earcare-orbit-disc {
+      position: relative;
+      width: 90%;
+      max-width: 320px;
+      margin: 0 auto 24px;
+      padding: 16px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 140px 140px 22px 22px;
+      background: radial-gradient(circle at 50% 30%, #221D12, #0E0E14);
+      box-shadow: inset 0 0 25px rgba(212, 175, 55, 0.16);
+    }
+
+    .earcare-orbit-disc {
+      width: 100%;
+      max-width: 330px;
+      min-height: 285px;
+      padding: 26px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, #171717 0%, #0f0f0f 100%);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3), inset 0 0 24px rgba(147, 51, 234, 0.12);
+    }
+
+    .earcare-orbit-product {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+      filter: drop-shadow(0 16px 18px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 18px rgba(246, 199, 104, 0.22));
+      transform: scale(1.04);
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .earcare-orbit-disc:hover .earcare-orbit-product {
+      transform: scale(1.08);
+      filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 24px rgba(246, 199, 104, 0.3));
+    }
+
+    .earcare-callouts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      list-style: none;
+    }
+
+    .earcare-callouts li {
+      min-height: 82px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 16px 14px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #15151D, #0E0E14);
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .earcare-callout-icon {
+      flex: 0 0 26px;
+      padding-top: 1px;
+      color: var(--gold-accent);
+    }
+
+    .earcare-callout-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .earcare-callouts strong {
+      display: block;
+      color: var(--text-white);
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .earcare-callouts { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 14px; padding: 0 4px 4px; }
+    .earcare-callouts > li:nth-child(-n+3) { min-height: 118px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 14px 8px; }
+    .earcare-callouts > li:nth-child(1) { grid-column: 1 / 2; }
+    .earcare-callouts > li:nth-child(2) { grid-column: 2 / 3; }
+    .earcare-callouts > li:nth-child(3) { grid-column: 3 / 4; }
+    .earcare-callouts > li:nth-child(-n+3) .earcare-callout-icon,
+    .earcare-callouts > li:nth-child(-n+3) small { display: none; }
+    .earcare-callouts > li:nth-child(-n+3) strong { font-size: 0; }
+    .earcare-callouts > li:nth-child(-n+3) strong::before,
+    .earcare-callouts > li:nth-child(-n+3) strong::after { display: block; line-height: 1.2; }
+    .earcare-callouts > li:nth-child(-n+3) strong::before { color: var(--purple-accent); font-size: 28px; margin-bottom: 10px; }
+    .earcare-callouts > li:nth-child(-n+3) strong::after { color: var(--text-white); font-size: 16px; font-weight: 500; }
+    .earcare-callouts > li:nth-child(1) strong::before { content: "6"; }
+    .earcare-callouts > li:nth-child(1) strong::after { content: "Herbs"; }
+    .earcare-callouts > li:nth-child(2) strong::before { content: "100%"; }
+    .earcare-callouts > li:nth-child(2) strong::after { content: "Ayurvedic"; }
+    .earcare-callouts > li:nth-child(3) strong::before { content: "0"; }
+    .earcare-callouts > li:nth-child(3) strong::after { content: "Chemicals"; }
+    .earcare-callouts > li:nth-child(4) { display: none; }
+    .earcare-callouts > .proof-pill { display: flex; min-height: 0; width: 100%; flex-direction: row; align-items: center; justify-content: center; padding: 13px 16px; border-radius: 999px; background: linear-gradient(135deg, #f6cf72 0%, #dcae45 100%); border-color: #f6cf72; }
+    .proof-pill span { display: none; }
+    .proof-pill strong { color: #201b2d; font-size: 14px !important; white-space: nowrap; }
+    .proof-pill:nth-of-type(5) { grid-column: 1 / 4; }
+    .proof-pill:nth-of-type(6) { grid-column: 4 / 7; }
+    .proof-pill:nth-of-type(7) { grid-column: 3 / 5; justify-self: center; }
+    .earcare-callouts > .proof-pill { display: none !important; }
+
+    .earcare-callouts small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .earcare-poster-note {
+      margin: 20px 16px 0;
+      padding: 0px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+      display: block;
+    }
+
+    .earcare-poster-note p:first-child {
+      font-size: 0;
+      margin: 0;
+    }
+
+    .earcare-poster-note p:first-child::after {
+      content: "जोड़ों के आसपास की मांसपेशियों की हल्की मालिश के लिए।";
+      font-size: 13px;
+    }
+
+    .earcare-poster-note p:last-child {
+      display: none;
+    }
+
+    /* How It Works */
+    #how-it-works {
+      background: var(--bg-dark);
+      padding-block: 38px;
+    }
+
+    #how-it-works>.eyebrow,
+    #how-it-works>h2 {
+      text-align: center;
+      display: block;
+      font-size: 25px;
+      line-height: 1.35;
+      max-width: 390px;
+      margin-inline: auto;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .support-card {
+      padding: 24px 20px;
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--gold-accent);
+      border-radius: 16px;
+      background: linear-gradient(160deg, #14141B 0%, #0B0B10 100%);
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .support-image {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100px;
+      aspect-ratio: 1;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+    }
+
+    .support-image::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 2px dashed rgba(246, 199, 104, 0.4);
+      border-radius: 50%;
+    }
+
+    .support-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, #2A2416, #121218);
+    }
+
+    .support-image>i {
+      font-size: 38px;
+      color: var(--gold-accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .support-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .support-card h3 {
+      font-size: 20px;
+      color: var(--text-white);
+    }
+
+    .support-card h3>i {
+      color: var(--gold-accent);
+      margin-right: 6px;
+    }
+
+    .support-card p {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    /* Alternating image-and-copy flow for the how-it-works cards. */
+    .support-card {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-height: 176px;
+      padding: 0;
+      border-top: 0;
+      border-left: 3px solid var(--gold-accent);
+      border-radius: 14px;
+      overflow: hidden;
+      text-align: left;
+      background: linear-gradient(135deg, #171717 0%, #0e0e12 100%);
+    }
+    .support-card:nth-child(even) { flex-direction: row-reverse; border-left: 0; border-right: 3px solid var(--gold-accent); }
+    .support-image { flex: 0 0 42%; width: 42%; height: auto; min-height: 176px; aspect-ratio: auto; margin: 0; border-radius: 0; overflow: hidden; }
+    .support-image::before { inset: 0; border: 0; border-right: 1px solid var(--line); border-radius: 0; }
+    .support-card:nth-child(even) .support-image::before { border-right: 0; border-left: 1px solid var(--line); }
+    .support-image::after { border-radius: 0; background: rgba(8, 8, 12, 0.2); }
+    .support-photo { border-radius: 0; }
+    .support-copy { flex: 1; min-width: 0; padding: 18px 16px; }
+    .support-card h3 { font-size: 18px; }
+    .support-card h3::before,
+    .support-card h3 > i,
+    .support-image > i { display: none; }
+    .support-card p { margin-top: 7px; font-size: 16px; line-height: 1.55; }
+    .support-card { transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+    .support-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-light);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5), 0 0 22px rgba(246, 199, 104, 0.13);
+    }
+    .support-card:hover .support-photo { transform: scale(1.06); }
+    .support-photo { transition: transform 0.35s ease; }
+
+    /* Ingredients */
+    #ingredients {
+      background: radial-gradient(ellipse at 50% 0%, #1A1810 0%, var(--bg-dark) 70%);
+      padding-block: 36px;
+    }
+
+    #ingredients>.eyebrow,
+    #ingredients>h2,
+    #ingredients>p {
+      text-align: center;
+      display: block;
+    }
+
+    .ingredient-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .herb {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg, #171717 0%, #0e0e12 100%);
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .herb:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45), 0 0 18px rgba(246, 199, 104, 0.12);
+    }
+
+    .herb-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1.25;
+      overflow: hidden;
+      border-radius: 11px;
+      background: #171717;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+    }
+
+    .herb-placeholder {
+      color: var(--gold-accent);
+      font-size: 30px;
+    }
+
+    .herb-image img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .herb h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-white);
+      position: relative;
+      padding: 2px 4px 8px;
+    }
+
+    .herb h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 28px;
+      height: 2px;
+      background: var(--gold-accent);
+      box-shadow: 0 0 8px var(--gold-accent);
+    }
+
+    /* Quality Section */
+    #quality {
+      background: radial-gradient(ellipse at 50% 0%, #1a1810 0%, var(--bg-dark) 72%);
+      padding-block: 42px;
+    }
+
+    #quality>.eyebrow,
+    #quality>h2 {
+      text-align: center;
+      display: block;
+    }
+
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .quality-tile {
+      position: relative;
+      background: linear-gradient(145deg, #171717 0%, #0e0e12 100%);
+      border: 1px solid var(--line);
+      aspect-ratio: 0.82;
+      border-radius: 18px;
+      padding: 14px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quality-tile::before {
+      display: none;
+    }
+
+    .quality-tile:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45), 0 0 18px rgba(246, 199, 104, 0.12);
+    }
+
+    .quality-art {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1.12;
+      border-radius: 12px;
+      background: #121218;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: 0;
+    }
+
+    .quality-art span {
+      color: var(--gold-accent);
+      font-size: 13px;
+    }
+
+    .quality-art img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
+      border-radius: 12px;
+    }
+
+    .quality-tile figcaption {
+      width: 100%;
+      margin-top: 10px;
+      padding: 5px 4px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #d9b24c, #9a7b1c);
+    }
+
+    .quality-tile:nth-child(2) figcaption { background: linear-gradient(135deg, #e0bc59, #a17f20); }
+    .quality-tile:nth-child(3) figcaption { background: linear-gradient(135deg, #c99b32, #8e6916); }
+    .quality-tile:nth-child(4) figcaption { background: linear-gradient(135deg, #edc96b, #a47f23); }
+
+    .quality-tile:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    /* Routine / Spotlight */
+    #start-routine {
+      position: relative;
+      padding: 40px 20px;
+      background: radial-gradient(circle at 50% 30%, #201C12 0%, var(--bg-dark) 75%);
+      text-align: center;
+    }
+
+    .routine-product {
+      position: relative;
+      margin-top: 24px;
+      padding: 42px 16px 24px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, #14141C 0%, #0B0B10 100%);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
+    }
+
+    .routine-product::after {
+      content: "100% NATURAL";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.18);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-accent);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .routine-bottle {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.8));
+    }
+
+    .routine-info {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .routine-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--gold-gradient);
+      color: #0A0802;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 0 18px var(--gold-glow);
+    }
+
+    .routine-trust {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--bg-card);
+      color: var(--text-white);
+      font-size: 13px;
+    }
+
+    .routine-trust strong {
+      color: var(--gold-accent);
+      font-size: 18px;
+    }
+
+    /* Compact offer spotlight */
+    #start-routine {
+      padding: 34px 20px 30px;
+      background: radial-gradient(circle at 50% 0%, #252012 0%, var(--bg-dark) 72%);
+    }
+
+    #start-routine::after {
+      content: "जोड़ों की रोज़मर्रा की देखभाल आज से शुरू करें";
+      display: block;
+      max-width: 390px;
+      margin: 18px auto 0;
+      padding: 14px 16px;
+      border-left: 3px solid var(--gold-accent);
+      border-right: 3px solid var(--gold-accent);
+      border-radius: 12px;
+      background: #171717;
+      color: var(--gold-light);
+      font-size: 15px;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    #start-routine > h2 {
+      max-width: 360px;
+      margin: 10px auto 0;
+      font-size: 27px;
+      line-height: 1.25;
+    }
+
+    #start-routine > h2 { font-size: 0; }
+    #start-routine > h2::after { content: "आज Order करें और Relief Pro पाएं"; font-size: 27px; }
+
+    #start-routine > h2::after { content: "आज के खास फायदे"; color: var(--gold-light); }
+
+    #start-routine > p { display: none; }
+
+    .routine-product {
+      margin-top: 20px;
+      padding: 0;
+      border-radius: 22px;
+      border-color: rgba(212, 175, 55, 0.38);
+      background: linear-gradient(145deg, #1a1812 0%, #0f0f10 100%);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.62), inset 0 0 28px rgba(212, 175, 55, 0.08);
+      overflow: hidden;
+    }
+
+    .routine-product::after { display: none; }
+    .routine-product::before {
+      content: "🔥  LIMITED TIME OFFER";
+      display: inline-block;
+      margin: 0 auto 18px;
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: var(--gold-gradient);
+      color: #17120a;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      box-shadow: 0 0 18px var(--gold-glow);
+    }
+
+    .routine-bottle {
+      display: none;
+      width: 78%;
+      max-width: 230px;
+      aspect-ratio: 1;
+      object-fit: contain;
+      margin: 0 auto 0 0;
+      padding: 12px;
+      border-radius: 20px;
+      filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 16px rgba(246, 199, 104, 0.18));
+      animation: capsuleFloat 3.2s ease-in-out infinite;
+    }
+
+    .offer-stickers {
+      position: static;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 2px;
+    }
+
+    .offer-stickers span {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      min-height: 190px;
+      padding: 22px 10px 16px;
+      clip-path: none;
+      background: linear-gradient(145deg, #171717, #0d0d0d);
+      border: 1px solid rgba(212, 175, 55, 0.38);
+      border-radius: 18px;
+      color: var(--gold-light);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: 0.5px;
+      text-align: center;
+      text-shadow: 0 1px 2px #000;
+      animation: badgeFloat 3s ease-in-out infinite;
+    }
+
+    .offer-stickers span::before { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 12px; border: 1px solid rgba(246, 199, 104, 0.6); border-radius: 50%; background: #171717; font-size: 30px; }
+    .offer-stickers span:nth-child(1)::before { content: "🚚"; }
+    .offer-stickers span:nth-child(2)::before { content: "🥗"; }
+    .offer-stickers span:nth-child(3) { display: none; }
+    .offer-stickers span:nth-child(1)::after { content: "Fast delivery support"; display: block; margin-top: 12px; font-size: 11px; font-weight: 500; color: var(--muted); }
+    .offer-stickers span:nth-child(2)::after { content: "Expert diet plan support"; display: block; margin-top: 12px; font-size: 11px; font-weight: 500; color: var(--muted); }
+
+    @keyframes badgeFloat {
+      0%, 100% { transform: rotate(-4deg) translateY(0); }
+      50% { transform: rotate(4deg) translateY(-5px); }
+    }
+
+    @keyframes capsuleFloat {
+      0%, 100% { transform: translateX(-6px) translateY(0) rotate(-1deg); }
+      50% { transform: translateX(-6px) translateY(-7px) rotate(1deg); }
+    }
+
+    .routine-info { margin-top: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .routine-rating { display: none; }
+    .routine-rating { grid-column: 1 / -1; justify-self: center; }
+    .routine-trust { padding: 8px 14px; border-radius: 999px; font-size: 12px; }
+    .routine-trust { display: none; }
+
+    .routine-info::before,
+    .routine-info::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 68px;
+      padding: 10px 6px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 14px;
+      background: linear-gradient(145deg, #211d12, #121212);
+      color: var(--text-white);
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      animation: offerStickerFloat 2.8s ease-in-out infinite;
+    }
+
+    .routine-info::before { content: "✦  Special Limited Offer"; grid-column: 1 / 2; }
+    .routine-info::after { content: "⚡  Direct Order Support"; grid-column: 2 / 4; animation-delay: 0.35s; }
+
+    .routine-info .routine-trust { display: flex; grid-column: 1 / -1; justify-self: center; min-height: 68px; width: 100%; justify-content: center; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 14px; background: linear-gradient(145deg, #211d12, #121212); font-size: 0; animation: offerStickerFloat 2.8s ease-in-out infinite; animation-delay: 0.7s; }
+    .routine-info .routine-trust > * { display: none; }
+    .routine-info .routine-trust::after { content: "✓  Easy Daily Routine"; font-size: 11px; font-weight: 700; color: var(--text-white); }
+
+    @keyframes offerStickerFloat {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-4px) rotate(1deg); }
+    }
+
+    /* Restore the simple offer layout. */
+    .routine-info { display: none !important; }
+
+    .routine-info::before { content: "◆  Special Discount"; }
+    .routine-info::after { content: "▣  Fast Delivery Support"; }
+
+
+    /* Form Section */
+    #order-form {
+      background: var(--bg-dark);
+      padding-block: 36px;
+    }
+
+    #order-form .eyebrow,
+    #order-form h2 {
+      text-align: center;
+      display: block;
+    }
+
+    #order-form { display: none; }
+
+    .form-card {
+      margin-top: 24px;
+      background: linear-gradient(160deg, #13131A 0%, #0A0A0E 100%);
+      padding: 24px 20px;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(212, 175, 55, 0.08);
+    }
+
+    .field {
+      margin-bottom: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-white);
+      font-size: 15px;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 50px;
+      background: #08080C;
+      color: var(--text-white);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 10px;
+      padding: 12px 14px;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .field input:focus {
+      border-color: var(--gold-accent);
+      box-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    .field input::placeholder {
+      color: #6A6A7D;
+      font-size: 14px;
+    }
+
+    .cta,
+    .submit {
+      width: 100%;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--gold-gradient);
+      color: #0A0802;
+      font-weight: 800;
+      font-size: 17px;
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px var(--gold-glow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      letter-spacing: 0.3px;
+    }
+
+    .cta:hover,
+    .submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6);
+    }
+
+    .submit:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .err {
+      display: none;
+      color: #F87171;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .err.show {
+      display: block;
+    }
+
+    .secure {
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Customer Reviews */
+    #customer-reviews {
+      background: radial-gradient(ellipse at 50% 0%, #1A1710 0%, var(--bg-dark) 70%);
+      padding-block: 36px;
+    }
+
+    #customer-reviews>.eyebrow,
+    #customer-reviews>h2 {
+      text-align: center;
+      display: block;
+    }
+
+    .customer-reviews-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .customer-review {
+      position: relative;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      border-top: 3px solid var(--gold-primary);
+      background: linear-gradient(145deg, #191814 0%, #0e0e12 100%);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42);
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .customer-review::after {
+      content: "“";
+      position: absolute;
+      right: 14px;
+      bottom: -16px;
+      color: rgba(246, 199, 104, 0.12);
+      font-family: Georgia, serif;
+      font-size: 100px;
+      line-height: 1;
+    }
+
+    .customer-review:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-accent);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(246, 199, 104, 0.1);
+    }
+
+    .customer-portrait {
+      text-align: center;
+    }
+
+    .customer-photo {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto;
+      border-radius: 50%;
+      border: 2px solid var(--gold-accent);
+      background: #181822;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      color: var(--gold-accent);
+      font-size: 20px;
+    }
+
+    .customer-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .customer-city {
+      display: inline-block;
+      margin-top: -8px;
+      position: relative;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--gold-gradient);
+      color: #0A0802;
+      font-size: 11px;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .customer-review-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .customer-review h3 {
+      font-size: 18px;
+      color: var(--text-white);
+    }
+
+    .customer-rating {
+      color: var(--gold-accent);
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px var(--gold-glow);
+    }
+
+    .customer-review blockquote p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    /* FAQs */
+    #faqs {
+      background: var(--bg-dark);
+      padding-block: 36px;
+    }
+
+    #faqs>.eyebrow,
+    #faqs>h2 {
+      text-align: center;
+      display: block;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 16px 0;
+    }
+
+    summary {
+      list-style: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--text-white);
+      font-size: 16px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary:after {
+      content: "+";
+      color: var(--gold-accent);
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    details[open] summary:after {
+      content: "−";
+    }
+
+    details p {
+      padding-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Footer & Disclaimer */
+    .disclaimer {
+      margin: 0 3px;
+      padding: 16px 26px 4px;
+      font-size: 10px;
+      line-height: 1.45;
+      color: rgba(246, 199, 104, 0.62);
+      background: #060609;
+      text-align: center;
+      border: 0;
+    }
+
+    .disclaimer p {
+      font-size: 9px;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .disclaimer strong {
+      display: none;
+    }
+
+    .policy-links {
+      margin: 0 3px;
+      padding: 2px 18px 12px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 2px;
+      background: #060609;
+      opacity: 0.62;
+      font-size: 9px;
+      border: 0;
+    }
+
+    .policy-links button {
+      border: 0;
+      background: none;
+      font-size: 9px;
+      color: var(--muted);
+      padding: 3px 1px;
+      transition: color 0.2s;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .policy-links button:hover {
+      color: var(--gold-accent);
+    }
+
+    .policy-links button:nth-child(5) { grid-column: 2 / 3; }
+    .policy-links button:nth-child(6) { grid-column: 3 / 4; }
+
+    /* Sticky Bottom Bar */
+    .sticky {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 115%);
+      max-width: var(--w);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px max(9px, env(safe-area-inset-bottom));
+      background: #050505;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(212, 175, 55, 0.24);
+      border-bottom: 0;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.45);
+      z-index: 80;
+      visibility: hidden;
+      transition: transform 0.25s ease;
+    }
+
+    .sticky.show {
+      transform: translate(-50%, 0);
+      visibility: visible;
+    }
+
+    .sticky a {
+      display: flex;
+      align-items: center;
+      flex: 0 0 42%;
+      justify-content: center;
+      background: var(--gold-gradient);
+      color: #17120a;
+      text-align: center;
+      padding: 12px 8px;
+      clip-path: polygon(8% 0, 100% 0, 88% 50%, 100% 100%, 8% 100%, 0 50%);
+      box-shadow: none;
+      font-weight: 800;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .sticky::before {
+      content: "🚚 Easy COD Available";
+      white-space: pre;
+      flex: 1;
+      color: var(--gold-light);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .sticky a::after { content: ""; }
+    .sticky a:hover { transform: translateY(-2px); }
+
+    @media (max-width: 380px) {
+      section { padding-left: 14px; padding-right: 14px; }
+
+      .offer-stickers { gap: 8px; }
+      .offer-stickers span { min-height: 170px; padding: 18px 6px 12px; font-size: 13px; }
+      .offer-stickers span::before { width: 50px; height: 50px; font-size: 25px; }
+      .offer-stickers span::after { font-size: 10px !important; }
+
+      .quality-grid { gap: 10px; }
+      .quality-tile { padding: 10px 7px 9px; }
+      .quality-tile figcaption { font-size: 12px; }
+
+      .policy-links { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-inline: 8px; }
+      .policy-links button:nth-child(5),
+      .policy-links button:nth-child(6) { grid-column: auto; }
+
+      .sticky { gap: 6px; padding-left: 7px; padding-right: 7px; }
+      .sticky::before { font-size: 11px; }
+      .sticky a { flex-basis: 39%; font-size: 12px; padding-inline: 5px; }
+
+      .customer-review { grid-template-columns: 54px minmax(0, 1fr); gap: 10px; padding: 14px 12px; }
+      .customer-photo { width: 52px; height: 52px; }
+      .customer-review h3 { font-size: 15px; }
+      .customer-review blockquote p { font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+      .disclaimer { margin: 0; padding: 14px 14px 4px; }
+      .disclaimer p { font-size: 8.5px; line-height: 1.45; }
+      .policy-links { margin: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 4px 6px 12px; gap: 1px 2px; }
+      .policy-links button { font-size: 8px; padding: 4px 0; white-space: nowrap; }
+      .policy-links button:nth-child(5) { grid-column: 2 / 3; }
+      .policy-links button:nth-child(6) { grid-column: 3 / 4; }
+
+      .sticky { max-width: 100%; border-radius: 14px 14px 0 0; }
+      .sticky::before { font-size: 10px; }
+      .sticky a { min-height: 40px; font-size: 12px; }
+
+      .adyops-form-section { width: calc(100% - 20px) !important; max-width: none !important; }
+      .offer-stickers span { min-height: 160px; }
+      .support-card { min-height: 150px; }
+      .support-image { min-height: 150px; }
+      .support-copy { padding: 14px 12px; }
+      .support-card h3 { font-size: 16px; }
+      .support-card p { font-size: 13px; }
+    }
+
+    /* Loading overlay */
+    .loading {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5, 5, 8, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 300;
+    }
+
+    .loading.show {
+      display: flex;
+    }
+
+    .loading-box {
+      background: #14141B;
+      border: 1px solid var(--line);
+      padding: 26px;
+      border-radius: 16px;
+      text-align: center;
+      color: var(--text-white);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+    }
+
+    .spinner {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 14px;
+      border: 3px solid rgba(212, 175, 55, 0.25);
+      border-top-color: var(--gold-accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Modals & Dialogs */
+    .pp-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(5, 5, 8, 0.88);
+      backdrop-filter: blur(8px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+
+    .pp-overlay.show {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .pp-modal {
+      width: min(420px, calc(100vw - 32px));
+      max-height: 75dvh;
+      overflow-y: auto;
+      background: #121219;
+      border-radius: 20px;
+      padding: 22px 18px;
+      border: 1px solid var(--gold-primary);
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.85);
+      color: var(--text-white);
+    }
+
+    .pp-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      width: 32px;
+      height: 32px;
+      border: 0;
+      border-radius: 50%;
+      background: #1C1C26;
+      color: var(--gold-accent);
+      font-size: 18px;
+    }
+
+    .pp-mtitle {
+      font: 700 20px "Halant", serif;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+
+    .pp-mbadge {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.15);
+      color: var(--gold-accent);
+      font-size: 11px;
+      border-radius: 999px;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+      font-weight: 600;
+      border: 1px solid rgba(212, 175, 55, 0.35);
+    }
+
+    .pp-modal p,
+    .pp-modal li {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .pp-modal ul {
+      padding-left: 18px;
+      margin: 8px 0;
+    }
+
+    .pp-mhl {
+      background: #181822;
+      border-left: 3px solid var(--gold-accent);
+      padding: 10px 12px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+      color: var(--text-white);
+      font-size: 13px;
+    }
+
+    .pp-cgrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pp-citem {
+      padding: 12px 8px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #15151F;
+      text-align: center;
+    }
+
+    .pp-citem>i {
+      color: var(--gold-accent);
+      font-size: 20px;
+    }
+
+    .pp-clbl {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .pp-cval {
+      color: var(--text-white);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    #order-dialog {
+      width: min(420px, calc(100% - 32px));
+      max-height: 88dvh;
+      margin: auto;
+      padding: 24px 18px;
+      border: 1px solid var(--gold-primary);
+      border-radius: 20px;
+      color: var(--text-white);
+      background: #111118;
+      box-shadow: 0 16px 45px rgba(0, 0, 0, 0.9);
+      overflow-y: auto;
+    }
+
+    #order-dialog::backdrop {
+      background: rgba(5, 5, 8, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .order-close {
+      float: right;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: #191924;
+      color: var(--text-white);
+      font-size: 20px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    #problem-section {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section id="home" class="banner hero">
+      <h1 class="sr-only">Relief Pro Ayurvedic Herbal Powder</h1>
+      <img class="hero-banner" src="images/banner.avif" alt="Relief Pro Ayurvedic Herbal Powder banner" width="941"
+        height="1671" fetchpriority="high" decoding="async" />
+    </section>
+
+    <section id="problem-roadmap" class="problem-roadmap">
+      <div class="eyebrow">समस्या को समझें</div>
+      <h2>जॉइंट्स में दर्द के साथ होने वाली <span class="accent">परेशानियाँ</span></h2>
+      <div class="symptom-flow">
+        <article class="symptom-card">
+          <figure>
+            <div class="symptom-photo">
+              <i class="fa-solid fa-bone"></i>
+              <img src="images/problem1.avif" alt="घुटनों में दर्द और अकड़न" loading="lazy" decoding="async"
+                onload="this.previousElementSibling.style.visibility='hidden'" onerror="this.hidden=true" />
+            </div>
+            <figcaption>
+              <span class="symptom-node">01</span>
+              <h3>घुटनों में दर्द और अकड़न</h3>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="symptom-card">
+          <figure>
+            <div class="symptom-photo">
+              <i class="fa-solid fa-cloud-sun"></i>
+              <img src="images/problem2.avif" alt="सुबह उठते ही जोड़ों में जकड़न" loading="lazy" decoding="async"
+                onload="this.previousElementSibling.style.visibility='hidden'" onerror="this.hidden=true" />
+            </div>
+            <figcaption>
+              <span class="symptom-node">02</span>
+              <h3>सुबह उठते ही जोड़ों में जकड़न</h3>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="symptom-card">
+          <figure>
+            <div class="symptom-photo">
+              <i class="fa-solid fa-stairs"></i>
+              <img src="images/problem3.avif" alt="सीढ़ियाँ चढ़ने-उतरने में परेशानी" loading="lazy" decoding="async"
+                onload="this.previousElementSibling.style.visibility='hidden'" onerror="this.hidden=true" />
+            </div>
+            <figcaption>
+              <span class="symptom-node">03</span>
+              <h3>सीढ़ियाँ चढ़ने-उतरने में परेशानी</h3>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="symptom-card">
+          <figure>
+            <div class="symptom-photo">
+              <i class="fa-solid fa-hand-fist"></i>
+              <img src="images/problem4.avif" alt="हाथ मोड़ने में दर्द" loading="lazy" decoding="async"
+                onload="this.previousElementSibling.style.visibility='hidden'" onerror="this.hidden=true" />
+            </div>
+            <figcaption>
+              <span class="symptom-node">04</span>
+              <h3>हाथ मोड़ने में दर्द</h3>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="symptom-card">
+          <figure>
+            <div class="symptom-photo">
+              <i class="fa-solid fa-person-walking"></i>
+              <img src="images/problem5.avif" alt="कंधे उठाने में असहजता" loading="lazy" decoding="async"
+                onload="this.previousElementSibling.style.visibility='hidden'" onerror="this.hidden=true" />
+            </div>
+            <figcaption>
+              <span class="symptom-node">05</span>
+              <h3>कंधे उठाने में असहजता</h3>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section id="product-intro" class="product">
+      <div class="eyebrow">Relief Pro का परिचय</div>
+      <h2>जॉइंट्स की देखभाल के लिए <span class="accent">Ayurvedic Support</span></h2>
+      <div class="earcare-poster">
+        <div class="earcare-poster-header">
+          <span class="earcare-wordmark">Relief<span>Pro</span></span><span class="earcare-poster-label">EVERYDAY<br />RELIEF
+            CARE</span>
+        </div>
+        <div class="earcare-orbit">
+          <div class="earcare-orbit-disc">
+            <img class="earcare-orbit-product" src="images/product.avif" alt="Relief Pro Ayurvedic Herbal Powder"
+              loading="lazy" decoding="async" />
+          </div>
+          <ul class="earcare-callouts" aria-label="Product features">
+            <li>
+              <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                  <path d="M7 24C2 10 14 6 26 6c0 12-4 22-16 18M7 27 23 11M13 21v-8m0 8h8" />
+                </svg></span><span><strong>पारंपरिक</strong><small>Ayurvedic herbs</small></span>
+            </li>
+            <li>
+              <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                  <path d="m6 10 10-5 10 5v13l-10 5-10-5Zm0 0 10 5 10-5M16 15v13M11 7.5l10 5" />
+                </svg></span><span><strong>सुविधाजनक</strong><small>powder format</small></span>
+            </li>
+            <li>
+              <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                  <rect x="5" y="7" width="22" height="21" rx="3" />
+                  <path d="M10 4v6m12-6v6M5 14h22m-16 7 3 3 7-7" />
+                </svg></span><span><strong>Daily Routine</strong><small>के लिए उपयोगी</small></span>
+            </li>
+            <li>
+              <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
+                  <path d="M9 5h11l5 5v17H7V5Zm10 0v7h6M11 17h10m-10 5h7" />
+                </svg></span><span><strong>आसान उपयोग</strong><small>Label के अनुसार</small></span>
+            </li>
+            <li class="proof-pill"><span>✓</span><strong>100% Ayurvedic Herbs</strong></li>
+            <li class="proof-pill"><span>✓</span><strong>Quality Tested</strong></li>
+            <li class="proof-pill"><span>✓</span><strong>Daily Wellness</strong></li>
+          </ul>
+        </div>
+        <div class="earcare-poster-note">
+          <p>जोड़ों के आसपास की मांसपेशियों की हल्की मालिश के लिए।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="eyebrow">Relief Pro कैसे काम करता है?</div>
+      <h2>जोड़ों की रोज़मर्रा की देखभाल के लिए <span class="accent">चार सरल चरण</span></h2>
+      <div class="support-grid">
+        <article class="support-card">
+          <div class="support-image">
+            <i class="ti ti-leaf" aria-hidden="true"></i>
+            <img class="support-photo" src="images/work1.avif" alt="Natural herbal nourishment" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="support-copy">
+            <h3><i class="ti ti-leaf" aria-hidden="true"></i>Natural Nourishment</h3>
+            <p>पारंपरिक आयुर्वेदिक जड़ी-बूटियों से बना Relief Pro जोड़ों और मांसपेशियों की प्राकृतिक देखभाल को support करता है।</p>
+          </div>
+        </article>
+        <article class="support-card">
+          <div class="support-image">
+            <i class="ti ti-activity" aria-hidden="true"></i>
+            <img class="support-photo" src="images/work2.avif" alt="Everyday joint care" loading="lazy" decoding="async">
+          </div>
+          <div class="support-copy">
+            <h3><i class="ti ti-activity" aria-hidden="true"></i>Everyday Joint Care</h3>
+            <p>सुबह उठते समय जोड़ों में अकड़न या लंबे समय तक बैठने के बाद होने वाली परेशानी में आराम पाने में मदद करता है।</p>
+          </div>
+        </article>
+        <article class="support-card">
+          <div class="support-image">
+            <i class="ti ti-walk" aria-hidden="true"></i>
+            <img class="support-photo" src="images/work3.avif" alt="Mobility support" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="support-copy">
+            <h3><i class="ti ti-walk" aria-hidden="true"></i>Mobility Support</h3>
+            <p>चलने-फिरने, सीढ़ियाँ चढ़ने और उठने-बैठने जैसी रोज़मर्रा की गतिविधियों में सहजता बनाए रखने में मददगार।</p>
+          </div>
+        </article>
+        <article class="support-card">
+          <div class="support-image">
+            <i class="ti ti-heart" aria-hidden="true"></i>
+            <img class="support-photo" src="images/work4.avif" alt="Overall joint wellness" loading="lazy"
+              decoding="async">
+          </div>
+          <div class="support-copy">
+            <h3><i class="ti ti-heart" aria-hidden="true"></i>Active Lifestyle Support</h3>
+            <p>सक्रिय जीवनशैली बनाए रखने और रोज़मर्रा के कामों में आसानी से चलने-फिरने के लिए जोड़ों और मांसपेशियों की देखभाल में मदद करता है।</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ingredients">
+      <div class="eyebrow">मुख्य Herbal Ingredients</div>
+      <h2>चुनिंदा <span class="accent">Ayurvedic Herbs</span></h2>
+      <p>Relief Pro में पारंपरिक रूप से उपयोग की जाने वाली herbal ingredients शामिल हैं:</p>
+      <div class="ingredient-grid">
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing1.avif" alt="Neem leaves" loading="lazy" decoding="async"
+              onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Neem</h3>
+        </article>
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing2.avif" alt="Giloy" loading="lazy" decoding="async" onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Giloy</h3>
+        </article>
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing3.avif" alt="Brahmi leaves" loading="lazy" decoding="async"
+              onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Brahmi</h3>
+        </article>
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing4.avif" alt="Turmeric" loading="lazy" decoding="async"
+              onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Turmeric</h3>
+        </article>
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing5.avif" alt="Tulsi leaves" loading="lazy" decoding="async"
+              onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Tulsi</h3>
+        </article>
+        <article class="herb">
+          <div class="herb-image">
+            <span class="herb-placeholder" aria-hidden="true"><i class="ti ti-leaf"></i></span>
+            <img src="images/ing6.avif" alt="Ashwagandha" loading="lazy" decoding="async"
+              onerror="this.style.display='none'"
+              onload="this.style.display='block';this.previousElementSibling.hidden=true">
+          </div>
+          <h3>Ashwagandha</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="quality" class="quality">
+      <div class="eyebrow">गुणवत्ता और पारदर्शिता</div>
+      <h2>प्रमाणित <span class="accent">क्वालिटी स्टैंडर्ड्स</span></h2>
+      <div class="quality-grid">
+        <figure class="quality-tile">
+          <div class="quality-art">
+            <span aria-hidden="true">GMP</span>
+            <img src="images/cert1.avif" alt="GMP" loading="lazy" decoding="async" onerror="this.hidden=true"
+              onload="this.hidden=false;this.previousElementSibling.hidden=true">
+          </div>
+          <figcaption>GMP Certified</figcaption>
+        </figure>
+        <figure class="quality-tile">
+          <div class="quality-art">
+            <span aria-hidden="true">ISO</span>
+            <img src="images/cert2.avif" alt="ISO" loading="lazy" decoding="async" onerror="this.hidden=true"
+              onload="this.hidden=false;this.previousElementSibling.hidden=true">
+          </div>
+          <figcaption>ISO Verified</figcaption>
+        </figure>
+        <figure class="quality-tile">
+          <div class="quality-art">
+            <span aria-hidden="true">FSSAI</span>
+            <img src="images/cert3.avif" alt="FSSAI" loading="lazy" decoding="async" onerror="this.hidden=true"
+              onload="this.hidden=false;this.previousElementSibling.hidden=true">
+          </div>
+          <figcaption>FSSAI Approved</figcaption>
+        </figure>
+        <figure class="quality-tile">
+          <div class="quality-art">
+            <span aria-hidden="true">Lab Tested</span>
+            <img src="images/cert4.avif" alt="Quality Testing" loading="lazy" decoding="async"
+              onerror="this.hidden=true" onload="this.hidden=false;this.previousElementSibling.hidden=true">
+          </div>
+          <figcaption>Quality Tested</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="start-routine" class="final-cta">
+      <h2>जोड़ों की Daily Wellness के लिए <span class="accent">Relief Pro</span></h2>
+      <p><strong>Relief Pro Ayurvedic Herbal Powder</strong></p>
+      <div class="routine-product">
+        <img class="routine-bottle" src="images/capsule.avif" alt="Relief Pro Herbal Powder bottle" loading="lazy"
+          decoding="async" width="1280" height="1280" />
+        <div class="offer-stickers" aria-label="Offer highlights">
+          <span>FAST DELIVERY<br />SUPPORT</span>
+          <span>DIET CHART<br />SUPPORT</span>
+          <span>DAILY<br />CARE</span>
+        </div>
+        <div class="routine-info">
+          <div class="routine-rating"><span aria-hidden="true">👑</span><strong>Special Limited-Time Offer</strong></div>
+          <div class="routine-trust" aria-label="82,000+ Customers का भरोसा">
+            <span aria-hidden="true">⭐</span><strong>82,000+</strong><span>संतुष्ट ग्राहकों का भरोसा*</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order-form">
+      <div class="section-head">
+        <div class="eyebrow">जानकारी और ऑर्डर के लिए</div>
+        <h2>Relief Pro के बारे में <span class="accent">जानकारी प्राप्त करें</span></h2>
+      </div>
+      <div class="form-card" id="inline-order-card">
+        <form id="orderForm" method="post"
+          action="https://script.google.com/macros/s/AKfycbxT6e4aWhK8JTf9ebsb7OQgqvkRDXd1y5QQctOOkEnERqRnfzUv_6XF30E-9ne1Jwjx/exec"
+          accept-charset="UTF-8" onsubmit="return submitForm(event);">
+          <input type="hidden" name="key" value="XQP4bdtEZkt3" />
+          <input type="hidden" name="product" value="Relief Pro Ayurvedic Herbal Powder" />
+          <input type="hidden" name="source" value="Relief Pro Website" />
+          <input type="hidden" name="date" id="date" />
+          <input type="hidden" name="event_id" id="event_id" />
+          <input type="hidden" name="page_url" id="page_url" />
+          <input type="hidden" name="referrer" id="referrer" />
+          <input type="hidden" name="utm_source" /><input type="hidden" name="utm_medium" /><input type="hidden"
+            name="utm_campaign" />
+          <input type="hidden" name="utm_campaign_id" /><input type="hidden" name="utm_adset" /><input type="hidden"
+            name="utm_adset_id" />
+          <input type="hidden" name="utm_ad" /><input type="hidden" name="utm_ad_id" /><input type="hidden"
+            name="utm_placement" />
+          <input type="hidden" name="fbclid" /><input type="hidden" name="fbc" /><input type="hidden" name="fbp" />
+          <div class="field">
+            <label for="name">आपका नाम *</label>
+            <input type="text" id="name" name="name" required autocomplete="name" pattern="[A-Za-z\u0900-\u097F ]+"
+              placeholder="अपना पूरा नाम दर्ज करें" />
+            <div class="err" id="nameError">कृपया पूरा नाम दर्ज करें।</div>
+          </div>
+          <div class="field">
+            <label for="phone">मोबाइल नंबर *</label>
+            <input type="tel" id="phone" name="phone" maxlength="10" inputmode="numeric" autocomplete="tel"
+              pattern="[6-9][0-9]{9}" required placeholder="अपना 10 अंकों का मोबाइल नंबर दर्ज करें" />
+            <div class="err" id="phoneError">
+              कृपया सही 10 अंकों का नंबर दर्ज करें।
+            </div>
+          </div>
+          <button class="submit" id="submitBtn" type="submit">
+            अभी ऑर्डर करें →
+          </button>
+          <div class="secure">
+            🔒 100% सुरक्षित डेटा · 📦 मुफ़्त डिलीवरी · ✅ कैश ऑन डिलीवरी उपलब्ध
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="adyops-order-form" class="adyops-form-section" style="width:100%;max-width:760px;margin:0 auto;">
+      <div class="section-head" style="text-align:center;margin-bottom:18px;">
+        <h2>आज ही अपना <span class="accent">ऑर्डर करें</span></h2>
+      </div>
+      <div class="adyos-form" data-form="slimax-powder-v7-copy"></div>
+    </section>
+    <script src="https://app.adyops.com/embed.js" data-form="slimax-powder-v7-copy" data-workspace="slimax" async></script>
+
+    <section id="customer-reviews">
+      <div class="eyebrow">ग्राहक अनुभव</div>
+      <h2>वास्तविक ग्राहकों के <span class="accent">अनुभव</span></h2>
+      <div class="customer-reviews-list">
+        <article class="customer-review">
+          <div class="customer-portrait">
+            <div class="customer-photo"><span aria-hidden="true">का</span><img src="images/test1.avif" alt="काजल कुमारी"
+                loading="lazy" decoding="async" onerror="this.hidden=true"
+                onload="this.hidden=false;this.previousElementSibling.hidden=true"></div>
+            <span class="customer-city">गुड़गाँव</span>
+          </div>
+          <div>
+            <header class="customer-review-header">
+              <h3>शिवानी चौहान</h3><span class="customer-rating" aria-hidden="true">★★★★★</span>
+            </header>
+            <blockquote>
+              <p>“घुटनों में दर्द और अकड़न की वजह से सीढ़ियाँ चढ़ना मुश्किल हो गया था। Relief Pro को नियमित इस्तेमाल करने के बाद जोड़ों में काफी हल्कापन और आराम महसूस हुआ।”</p>
+            </blockquote>
+          </div>
+        </article>
+        <article class="customer-review">
+          <div class="customer-portrait">
+            <div class="customer-photo"><span aria-hidden="true">रा</span><img src="images/test2.avif" alt="राजेश पटेल"
+                loading="lazy" decoding="async" onerror="this.hidden=true"
+                onload="this.hidden=false;this.previousElementSibling.hidden=true"></div>
+            <span class="customer-city">मुंबई</span>
+          </div>
+          <div>
+            <header class="customer-review-header">
+              <h3>दीपक यादव</h3><span class="customer-rating" aria-hidden="true">★★★★★</span>
+            </header>
+            <blockquote>
+              <p>“सुबह उठते ही जोड़ों में बहुत जकड़न रहती थी। Relief Pro ने मुझे सुबह के समय जोड़ों की अकड़न से बहुत अच्छा आराम दिया है।”</p>
+            </blockquote>
+          </div>
+        </article>
+        <article class="customer-review">
+          <div class="customer-portrait">
+            <div class="customer-photo"><span aria-hidden="true">री</span><img src="images/test3.avif" alt="रिया चौधरी"
+                loading="lazy" decoding="async" onerror="this.hidden=true"
+                onload="this.hidden=false;this.previousElementSibling.hidden=true"></div>
+            <span class="customer-city">नई दिल्ली</span>
+          </div>
+          <div>
+            <header class="customer-review-header">
+              <h3>अंजलि गुप्ता</h3><span class="customer-rating" aria-hidden="true">★★★★★</span>
+            </header>
+            <blockquote>
+              <p>“पहले कंधों और हाथों में अक्सर दर्द महसूस होता था। Relief Pro को अपनी दिनचर्या में शामिल करने के बाद अब मुझे बहुत राहत मिली है।”</p>
+            </blockquote>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="faqs">
+      <div class="eyebrow">FAQs</div>
+      <h2>अक्सर पूछे जाने वाले <span class="accent">सवाल</span></h2>
+      <details>
+        <summary>Relief Pro क्या है?</summary>
+        <p>Relief Pro एक आयुर्वेदिक हर्बल पाउडर है, जिसमें Neem, Giloy, Brahmi, Turmeric, Garlic, Tulsi, Bilva और अन्य पारंपरिक जड़ी-बूटियाँ शामिल हैं जो जोड़ों की देखभाल के लिए उपयोगी हैं।</p>
+      </details>
+      <details>
+        <summary>क्या Relief Pro जोड़ों के दर्द और जकड़न में सहायक है?</summary>
+        <p>हाँ, Relief Pro जोड़ों के दर्द, सुबह की जकड़न और मांसपेशियों के तनाव में सामान्य राहत और देखभाल को सपोर्ट करता है।</p>
+      </details>
+      <details>
+        <summary>इसका उपयोग कैसे करना चाहिए?</summary>
+        <p>इसे प्रोडक्ट लेबल पर दिए गए निर्देशों के अनुसार अपनी नियमित दिनचर्या में शामिल करें।</p>
+      </details>
+      <details>
+        <summary>क्या इसके कोई साइड इफेक्ट्स हैं?</summary>
+        <p>नहीं, यह 100% प्राकृतिक आयुर्वेदिक घटकों से बना सुरक्षित उत्पाद है।</p>
+      </details>
+    </section>
+
+    <div id="disclaimer" class="disclaimer">
+      <strong>LEGAL DISCLAIMER</strong>
+      <p>Disclaimer: Relief Pro is not intended to diagnose, treat, or cure any medical condition and is not a substitute for professional medical advice. Consult a qualified healthcare professional if you experience severe pain or persistent discomfort. Please read the product label and follow the recommended usage.</p>
+    </div>
+
+    <div class="policy-links">
+      <button onclick="openModal('privacy')">Privacy Policy</button>
+      <button onclick="openModal('terms')">Terms & Conditions</button>
+      <button onclick="openModal('shipping')">Shipping</button>
+      <button onclick="openModal('cancel')">Cancellation</button>
+      <button onclick="openModal('contact')">Contact Us</button>
+      <button onclick="openModal('disclaimer')">Legal Disclaimer</button>
+    </div>
+
+    <div class="sticky" id="order-sticky">
+      <a href="#adyops-order-form">अभी ऑर्डर करें</a>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="loading-box">
+        <div class="spinner"></div>
+        <p>आपकी request भेजी जा रही है...</p>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="order-dialog" aria-labelledby="order-dialog-title">
+    <button type="button" class="order-close" aria-label="Close order popup">×</button>
+    <div class="eyebrow">RELIEF PRO</div>
+    <h2 id="order-dialog-title">अभी ऑर्डर करें</h2>
+    <div id="popup-order-card" class="form-card"></div>
+  </dialog>
+
+  <div class="pp-overlay" id="pp-overlay" onclick="closeIfOutside(event)">
+    <div class="pp-modal" id="pp-modal">
+      <button class="pp-close" onclick="closeModal()" aria-label="Close">×</button>
+      <div id="pp-content"></div>
+    </div>
+  </div>
+
+  <script>
+    const $ = (s) => document.querySelector(s),
+      $$ = (s) => [...document.querySelectorAll(s)];
+
+    const stickyOrder = $("#order-sticky");
+    const bannerSection = $(".banner");
+    const problemSection = $("#problem-roadmap");
+    const orderFormSection = $("#order-form");
+    let stickyFrame = 0;
+
+    function isInViewport(element) {
+      if (!element) return false;
+      const rect = element.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    function updateStickyOrder() {
+      stickyFrame = 0;
+      if (!stickyOrder) return;
+
+      const problemStarted =
+        problemSection &&
+        problemSection.getBoundingClientRect().top < window.innerHeight;
+      const hideOnBanner = isInViewport(bannerSection) && !problemStarted;
+      const hideOnOrderForm = isInViewport(orderFormSection);
+
+      stickyOrder.classList.toggle(
+        "show",
+        !(hideOnBanner || hideOnOrderForm),
+      );
+    }
+
+    function scheduleStickyUpdate() {
+      if (!stickyFrame)
+        stickyFrame = requestAnimationFrame(updateStickyOrder);
+    }
+
+    window.addEventListener("scroll", scheduleStickyUpdate, { passive: true });
+    window.addEventListener("resize", scheduleStickyUpdate);
+    updateStickyOrder();
+
+    const UTM_KEYS = [
+      "utm_source", "utm_medium", "utm_campaign", "utm_campaign_id",
+      "utm_adset", "utm_adset_id", "utm_ad", "utm_ad_id", "utm_placement",
+    ];
+
+    function setHidden(n, v) {
+      const i = document.querySelector('#orderForm input[name="' + n + '"]');
+      if (i) i.value = v || "";
+    }
+
+    function cookie(n) {
+      const m = document.cookie.match(new RegExp("(?:^|;\\s*)" + n + "=([^;]*)"));
+      return m ? decodeURIComponent(m[1]) : "";
+    }
+
+    function savedValue(k) {
+      try {
+        return sessionStorage.getItem(k) || "";
+      } catch (_) {
+        return "";
+      }
+    }
+
+    function capture() {
+      const p = new URLSearchParams(location.search);
+      UTM_KEYS.forEach((k) => setHidden(k, p.get(k) || savedValue(k)));
+      UTM_KEYS.forEach((k) => {
+        if (p.get(k)) {
+          try {
+            sessionStorage.setItem(k, p.get(k));
+          } catch (_) { }
+        }
+      });
+      const fbclid = p.get("fbclid") || "";
+      setHidden("fbclid", fbclid);
+      setHidden(
+        "fbc",
+        cookie("_fbc") || (fbclid ? "fb.1." + Date.now() + "." + fbclid : ""),
+      );
+      setHidden("fbp", cookie("_fbp"));
+    }
+    capture();
+
+    const nameInput = $("#name");
+    const phoneInput = $("#phone");
+
+    nameInput?.addEventListener("input", () => {
+      nameInput.value = nameInput.value
+        .replace(/[^A-Za-z\u0900-\u097F ]/g, "")
+        .replace(/\s{2,}/g, " ")
+        .replace(/^\s+/, "");
+      err("nameError", false);
+    });
+
+    phoneInput?.addEventListener("input", () => {
+      let value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+      if (value && !/^[6-9]/.test(value)) value = value.slice(1);
+      phoneInput.value = value;
+      err("phoneError", false);
+    });
+
+    function validName(v) {
+      return /^[A-Za-z\u0900-\u097F]+(?: [A-Za-z\u0900-\u097F]+)+$/.test(v.trim());
+    }
+
+    function validPhone(v) {
+      return /^[6-9][0-9]{9}$/.test(v);
+    }
+
+    function err(id, on) {
+      document.getElementById(id)?.classList.toggle("show", on);
+    }
+
+    function eventId() {
+      return globalThis.crypto?.randomUUID
+        ? globalThis.crypto.randomUUID()
+        : "evt-" + Date.now() + "-" + Math.random().toString(16).slice(2);
+    }
+
+    const FORM_ENDPOINT =
+      "https://script.google.com/macros/s/AKfycbxT6e4aWhK8JTf9ebsb7OQgqvkRDXd1y5QQctOOkEnERqRnfzUv_6XF30E-9ne1Jwjx/exec";
+    const THANK_YOU_PAGE = "./Thankyou.html";
+    let formSubmitting = false;
+
+    async function submitForm(e) {
+      e.preventDefault();
+      if (formSubmitting) return false;
+
+      const form = document.getElementById("orderForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const loading = document.getElementById("loading");
+      const name = nameInput.value.trim().replace(/\s+/g, " ");
+      const phone = phoneInput.value.replace(/\D/g, "");
+      const nameOk = validName(name);
+      const phoneOk = validPhone(phone);
+
+      err("nameError", !nameOk);
+      err("phoneError", !phoneOk);
+      if (!nameOk || !phoneOk) return false;
+
+      nameInput.value = name;
+      phoneInput.value = phone;
+      capture();
+      setHidden(
+        "date",
+        new Intl.DateTimeFormat("en-IN", {
+          timeZone: "Asia/Kolkata",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }).format(new Date()),
+      );
+      setHidden("event_id", eventId());
+      setHidden("page_url", location.href);
+      setHidden("referrer", document.referrer);
+
+      formSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "सबमिट हो रहा है...";
+      loading?.classList.add("show");
+      document.getElementById("order-dialog")?.close();
+
+      try {
+        const payload = new URLSearchParams();
+        new FormData(form).forEach((value, key) => payload.append(key, value));
+
+        await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          body: payload.toString(),
+          keepalive: true,
+        });
+        window.location.assign(THANK_YOU_PAGE);
+      } catch (error) {
+        formSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = "अभी ऑर्डर करें →";
+        loading?.classList.remove("show");
+        alert("डेटा भेजा नहीं जा सका। कृपया दोबारा प्रयास करें।");
+      }
+      return false;
+    }
+    window.submitForm = submitForm;
+
+    const contents = {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock"></i> Privacy Policy</div><div class="pp-mbadge">सुरक्षित & एन्क्रिप्टेड</div><p>Relief Pro आपकी व्यक्तिगत जानकारी की सुरक्षा को सर्वोच्च प्राथमिकता देता है। आपका डेटा किसी third-party को नहीं बेचा जाता।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-description"></i> Terms & Conditions</div><div class="pp-mbadge">शर्तें लागू</div><p>यह उत्पाद एक आयुर्वेदिक सप्लीमेंट है। परिणाम व्यक्ति-दर-व्यक्ति भिन्न हो सकते हैं।</p>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery"></i> Shipping Policy</div><div class="pp-mbadge">All India Free Delivery</div><p>हम पूरे भारत में 3-7 कार्य दिवसों के भीतर सुरक्षित डिलीवरी प्रदान करते हैं।</p>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh"></i> Cancellation Policy</div><div class="pp-mbadge">Easy Return</div><p>ऑर्डर शिप होने से पहले आप इसे आसानी से कैंसल कर सकते हैं।</p>`,
+      contact: `<div class="pp-mtitle"><i class="ti ti-headset"></i> Contact Us</div><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+91 8860606078</div></div><div class="pp-citem"><i class="ti ti-mail"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@ssherbalindia.com</div></div></div>`,
+      disclaimer: `<div class="pp-mtitle">Legal Disclaimer</div><p>Relief Pro कोई मेडिकल डायग्नोसिस या दवा नहीं है। गंभीर स्थिति में योग्य डॉक्टर से परामर्श लें।</p>`,
+    };
+
+    Object.assign(contents, {
+      privacy: `<div class="pp-mtitle"><i class="ti ti-shield-lock"></i> Privacy Policy</div><div class="pp-mbadge">Last updated: June 2025</div><p>Relief Pro आपकी personal information की सुरक्षा को सर्वोच्च प्राथमिकता देता है। Order के दौरान नाम, मोबाइल नंबर, delivery address, secure payment details और order history एकत्र की जा सकती है। आपकी जानकारी किसी third-party को नहीं बेची जाती और इसका उपयोग केवल order processing और delivery के लिए किया जाता है।</p>`,
+      terms: `<div class="pp-mtitle"><i class="ti ti-file-description"></i> Terms & Conditions</div><div class="pp-mbadge">Please read carefully</div><p>Relief Pro के results व्यक्ति-दर-व्यक्ति अलग हो सकते हैं। यह product किसी बीमारी का इलाज नहीं है और wellness support के लिए है। 18 वर्ष से कम आयु के व्यक्ति guardian consent के बिना order न करें। Fake या fraudulent orders पर legal action लिया जा सकता है। Product images केवल representation के लिए हैं। Prices, offers और terms बिना prior notice बदले जा सकते हैं।</p>`,
+      shipping: `<div class="pp-mtitle"><i class="ti ti-truck-delivery"></i> Shipping Policy</div><div class="pp-mbadge">Delivery All India</div><p>Relief Pro की delivery पूरे India में उपलब्ध है। Metro cities में 3–5, Tier-2 और Tier-3 cities में 5–7 और remote areas में 7–10 business days लग सकते हैं। Order confirm होने के 24–48 घंटे में tracking SMS/WhatsApp पर भेजी जाएगी। Delivery के 3 attempts होंगे। Incorrect address की जिम्मेदारी customer की होगी।</p>`,
+      cancel: `<div class="pp-mtitle"><i class="ti ti-refresh"></i> Cancellation Policy</div><div class="pp-mbadge">7-Day Easy Return</div><p>Order confirm होने के 24 घंटे के अंदर cancellation request की जा सकती है। Dispatch के बाद cancellation संभव नहीं है। Damaged या wrong product की complaint 7 दिनों के अंदर करें। Opened या used products return नहीं किए जाएंगे। Eligible refund 5–7 business days में original payment method पर process किया जाएगा।</p>`,
+      contact: `<div class="pp-mtitle"><i class="ti ti-headset"></i> Contact Us</div><p>Relief Pro support team सोमवार से शनिवार, सुबह 9 बजे से शाम 6 बजे तक उपलब्ध है।</p><div class="pp-cgrid"><div class="pp-citem"><i class="ti ti-phone"></i><div class="pp-clbl">Call / WhatsApp</div><div class="pp-cval">+91 88606 06078</div></div><div class="pp-citem"><i class="ti ti-mail"></i><div class="pp-clbl">Email</div><div class="pp-cval">support@ssherbalindia.com</div></div><div class="pp-citem"><i class="ti ti-clock"></i><div class="pp-clbl">Response Time</div><div class="pp-cval">Within 24 hours</div></div></div>`,
+      disclaimer: `<div class="pp-mtitle">Legal Disclaimer</div><div class="pp-mbadge">Important Notice</div><p>Relief Pro एक natural wellness supplement है। यह किसी बीमारी का diagnosis, treatment, cure या prevention नहीं करता। Results individual to individual अलग हो सकते हैं। यह food supplement है, drug नहीं। किसी medical condition, pregnancy, nursing या chronic illness की स्थिति में doctor से consult करें। Website के statements किसी regulatory authority द्वारा evaluate नहीं किए गए हैं। Images, descriptions और testimonials केवल illustrative purpose के लिए हैं।</p>`
+    });
+
+    function openModal(k) {
+      if (!contents[k]) return;
+      $("#pp-content").innerHTML = contents[k];
+      $("#pp-overlay").classList.add("show");
+      $("#pp-modal").scrollTo(0, 0);
+    }
+    function closeModal() {
+      $("#pp-overlay").classList.remove("show");
+    }
+    function closeIfOutside(e) {
+      if (e.target === $("#pp-overlay")) closeModal();
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    window.openModal = openModal;
+    window.closeModal = closeModal;
+    window.closeIfOutside = closeIfOutside;
+  </script>
+  <script>
+    (() => {
+      const dialog = document.getElementById("order-dialog"),
+        form = document.getElementById("orderForm"),
+        home = document.getElementById("inline-order-card");
+      let trigger;
+      document.querySelectorAll("[data-order-popup]").forEach((button) =>
+        button.addEventListener("click", (event) => {
+          if (typeof dialog.showModal !== "function") return;
+          event.preventDefault();
+          trigger = button;
+          document.getElementById("popup-order-card").appendChild(form);
+          dialog.showModal();
+          document.body.classList.add("order-popup-open");
+          document.getElementById("name").focus();
+        }),
+      );
+      dialog
+        .querySelector(".order-close")
+        .addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        const r = dialog.getBoundingClientRect();
+        if (
+          event.target === dialog &&
+          (event.clientX < r.left ||
+            event.clientX > r.right ||
+            event.clientY < r.top ||
+            event.clientY > r.bottom)
+        )
+          dialog.close();
+      });
+      dialog.addEventListener("close", () => {
+        home.appendChild(form);
+        document.body.classList.remove("order-popup-open");
+        trigger?.focus({ preventScroll: true });
+        scheduleStickyUpdate();
+      });
+    })();
+  </script>
+</body>
+
+</html>
