@@ -158,6 +158,16 @@
         color: var(--muted); font-size: 14px;
         border-block: 1px solid var(--line); border-right: 1px solid var(--line);
       }
+      .order-id {
+        margin: 20px 0 24px;
+        padding: 14px 18px;
+        border: 1px solid rgba(212, 175, 55, 0.45);
+        border-radius: 12px;
+        background: rgba(212, 175, 55, 0.08);
+        text-align: center;
+      }
+      .order-id small { display: block; margin-bottom: 5px; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+      .order-id strong { color: var(--gold-accent); font-size: 19px; letter-spacing: .08em; }
       .secure svg {
         width: 19px; height: 19px; margin-right: 8px;
         vertical-align: middle; color: var(--gold-accent);
@@ -220,6 +230,10 @@
       </section>
 
       <section class="content">
+        <div class="order-id" id="order-id" hidden>
+          <small>Order ID</small>
+          <strong id="order-id-value"></strong>
+        </div>
         <article class="product">
           <div class="product-image">
             <div class="product-fallback">
@@ -271,5 +285,16 @@
         <strong>Relief Pro</strong><br />Selected Ayurvedic Herbs · 100% Quality Assured · Everyday Wellness Routine
       </footer>
     </main>
+    <script>
+      (() => {
+        try {
+          const id = sessionStorage.getItem("reliefProOrderId");
+          if (id) {
+            document.getElementById("order-id-value").textContent = id;
+            document.getElementById("order-id").hidden = false;
+          }
+        } catch (_) { }
+      })();
+    </script>
   </body>
 </html>
