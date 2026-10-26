@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=5"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <meta name="theme-color" content="#08080C" />
     <meta name="robots" content="noindex,nofollow" />
@@ -16,6 +16,11 @@
       rel="stylesheet"
     />
     <style>
+      html,
+      body {
+        touch-action: pan-x pan-y;
+      }
+
       :root {
         --bg-dark: #08080C;
         --bg-card: #121218;
@@ -295,6 +300,17 @@
           }
         } catch (_) { }
       })();
+    </script>
+    <script>
+      document.addEventListener("gesturestart", (event) => event.preventDefault(), { passive: false });
+      document.addEventListener("gesturechange", (event) => event.preventDefault(), { passive: false });
+      document.addEventListener("gestureend", (event) => event.preventDefault(), { passive: false });
+      document.addEventListener("wheel", (event) => {
+        if (event.ctrlKey) event.preventDefault();
+      }, { passive: false });
+      document.addEventListener("keydown", (event) => {
+        if (event.ctrlKey && ["+", "=", "-", "0"].includes(event.key)) event.preventDefault();
+      });
     </script>
   </body>
 </html>

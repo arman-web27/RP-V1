@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="theme-color" content="#08080C" />
   <title>Relief Pro — Ayurvedic Herbal Powder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,6 +42,11 @@
       scroll-padding-top: 20px;
       background: var(--bg-dark);
       -webkit-text-size-adjust: 100%;
+    }
+
+    html,
+    body {
+      touch-action: pan-x pan-y;
     }
 
     body {
@@ -2376,6 +2381,18 @@
         scheduleStickyUpdate();
       });
     })();
+  </script>
+  <script>
+    // Prevent browser zoom gestures/shortcuts while keeping normal page scrolling.
+    document.addEventListener("gesturestart", (event) => event.preventDefault(), { passive: false });
+    document.addEventListener("gesturechange", (event) => event.preventDefault(), { passive: false });
+    document.addEventListener("gestureend", (event) => event.preventDefault(), { passive: false });
+    document.addEventListener("wheel", (event) => {
+      if (event.ctrlKey) event.preventDefault();
+    }, { passive: false });
+    document.addEventListener("keydown", (event) => {
+      if (event.ctrlKey && ["+", "=", "-", "0"].includes(event.key)) event.preventDefault();
+    });
   </script>
 </body>
 
