@@ -409,17 +409,8 @@
     .earcare-callouts > li:nth-child(3) { grid-column: 3 / 4; }
     .earcare-callouts > li:nth-child(-n+3) .earcare-callout-icon,
     .earcare-callouts > li:nth-child(-n+3) small { display: none; }
-    .earcare-callouts > li:nth-child(-n+3) strong { font-size: 0; }
-    .earcare-callouts > li:nth-child(-n+3) strong::before,
-    .earcare-callouts > li:nth-child(-n+3) strong::after { display: block; line-height: 1.2; }
-    .earcare-callouts > li:nth-child(-n+3) strong::before { color: var(--purple-accent); font-size: 28px; margin-bottom: 10px; }
-    .earcare-callouts > li:nth-child(-n+3) strong::after { color: var(--text-white); font-size: 16px; font-weight: 500; }
-    .earcare-callouts > li:nth-child(1) strong::before { content: "6"; }
-    .earcare-callouts > li:nth-child(1) strong::after { content: "Herbs"; }
-    .earcare-callouts > li:nth-child(2) strong::before { content: "100%"; }
-    .earcare-callouts > li:nth-child(2) strong::after { content: "Ayurvedic"; }
-    .earcare-callouts > li:nth-child(3) strong::before { content: "0"; }
-    .earcare-callouts > li:nth-child(3) strong::after { content: "Chemicals"; }
+    .earcare-callouts > li:nth-child(-n+3) strong { display: block; color: var(--purple-accent); font-size: 28px; line-height: 1.2; margin-bottom: 10px; }
+    .earcare-callouts > li:nth-child(-n+3) small { display: block; color: var(--text-white); font-size: 16px; font-weight: 500; line-height: 1.2; }
     .earcare-callouts > li:nth-child(4) { display: none; }
     .earcare-callouts > .proof-pill { display: flex; min-height: 0; width: 100%; flex-direction: row; align-items: center; justify-content: center; padding: 13px 16px; border-radius: 999px; background: linear-gradient(135deg, #f6cf72 0%, #dcae45 100%); border-color: #f6cf72; }
     .proof-pill span { display: none; }
@@ -447,15 +438,7 @@
       display: block;
     }
 
-    .earcare-poster-note p:first-child {
-      font-size: 0;
-      margin: 0;
-    }
-
-    .earcare-poster-note p:first-child::after {
-      content: "जोड़ों के आसपास की मांसपेशियों की हल्की मालिश के लिए।";
-      font-size: 13px;
-    }
+    .earcare-poster-note p:first-child { font-size: 13px; margin: 0; }
 
     .earcare-poster-note p:last-child {
       display: none;
@@ -785,8 +768,7 @@
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65);
     }
 
-    .routine-product::after {
-      content: "100% NATURAL";
+    .routine-natural-badge {
       position: absolute;
       top: 14px;
       left: 14px;
@@ -852,8 +834,7 @@
       background: radial-gradient(circle at 50% 0%, #252012 0%, var(--bg-dark) 72%);
     }
 
-    #start-routine::after {
-      content: "जोड़ों की रोज़मर्रा की देखभाल आज से शुरू करें";
+    .routine-note {
       display: block;
       max-width: 390px;
       margin: 18px auto 0;
@@ -875,12 +856,9 @@
       line-height: 1.25;
     }
 
-    #start-routine > h2 { font-size: 0; }
-    #start-routine > h2::after { content: "आज Order करें और Relief Pro पाएं"; font-size: 27px; }
+    #start-routine > h2 { color: var(--gold-light); }
 
-    #start-routine > h2::after { content: "आज के खास फायदे"; color: var(--gold-light); }
-
-    #start-routine > p { display: none; }
+    .routine-product-name { display: none; }
 
     .routine-product {
       margin-top: 20px;
@@ -893,8 +871,7 @@
     }
 
     .routine-product::after { display: none; }
-    .routine-product::before {
-      content: "🔥  LIMITED TIME OFFER";
+    .routine-offer-badge {
       display: inline-block;
       margin: 0 auto 18px;
       padding: 9px 20px;
@@ -928,7 +905,7 @@
       padding: 2px;
     }
 
-    .offer-stickers span {
+    .offer-stickers > span {
       position: relative;
       display: grid;
       place-items: center;
@@ -949,12 +926,9 @@
       animation: badgeFloat 3s ease-in-out infinite;
     }
 
-    .offer-stickers span::before { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 12px; border: 1px solid rgba(246, 199, 104, 0.6); border-radius: 50%; background: #171717; font-size: 30px; }
-    .offer-stickers span:nth-child(1)::before { content: "🚚"; }
-    .offer-stickers span:nth-child(2)::before { content: "🥗"; }
+    .offer-stickers .offer-icon { display: grid; place-items: center; width: 58px; height: 58px; margin: 0 auto 12px; border: 1px solid rgba(246, 199, 104, 0.6); border-radius: 50%; background: #171717; font-size: 25px; }
     .offer-stickers span:nth-child(3) { display: none; }
-    .offer-stickers span:nth-child(1)::after { content: "Fast delivery support"; display: block; margin-top: 12px; font-size: 11px; font-weight: 500; color: var(--muted); }
-    .offer-stickers span:nth-child(2)::after { content: "Expert diet plan support"; display: block; margin-top: 12px; font-size: 11px; font-weight: 500; color: var(--muted); }
+    .offer-stickers span small { display: block; margin-top: 12px; font-size: 11px; font-weight: 500; color: var(--muted); }
 
     @keyframes badgeFloat {
       0%, 100% { transform: rotate(-4deg) translateY(0); }
@@ -972,8 +946,7 @@
     .routine-trust { padding: 8px 14px; border-radius: 999px; font-size: 12px; }
     .routine-trust { display: none; }
 
-    .routine-info::before,
-    .routine-info::after {
+    .routine-info > .routine-offer-item {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -989,12 +962,12 @@
       animation: offerStickerFloat 2.8s ease-in-out infinite;
     }
 
-    .routine-info::before { content: "✦  Special Limited Offer"; grid-column: 1 / 2; }
-    .routine-info::after { content: "⚡  Direct Order Support"; grid-column: 2 / 4; animation-delay: 0.35s; }
+    .routine-info > .routine-offer-item:nth-child(1) { grid-column: 1 / 2; }
+    .routine-info > .routine-offer-item:nth-child(2) { grid-column: 2 / 4; animation-delay: 0.35s; }
 
     .routine-info .routine-trust { display: flex; grid-column: 1 / -1; justify-self: center; min-height: 68px; width: 100%; justify-content: center; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 14px; background: linear-gradient(145deg, #211d12, #121212); font-size: 0; animation: offerStickerFloat 2.8s ease-in-out infinite; animation-delay: 0.7s; }
     .routine-info .routine-trust > * { display: none; }
-    .routine-info .routine-trust::after { content: "✓  Easy Daily Routine"; font-size: 11px; font-weight: 700; color: var(--text-white); }
+    .routine-info .routine-trust .routine-trust-label { display: block; font-size: 11px; font-weight: 700; color: var(--text-white); }
 
     @keyframes offerStickerFloat {
       0%, 100% { transform: translateY(0) rotate(-1deg); }
@@ -1004,8 +977,6 @@
     /* Restore the simple offer layout. */
     .routine-info { display: none !important; }
 
-    .routine-info::before { content: "◆  Special Discount"; }
-    .routine-info::after { content: "▣  Fast Delivery Support"; }
 
 
     /* Form Section */
@@ -1380,8 +1351,7 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .sticky::before {
-      content: "🚚 Easy COD Available";
+    .sticky-note {
       white-space: pre;
       flex: 1;
       color: var(--gold-light);
@@ -1389,7 +1359,6 @@
       font-size: 14px;
       line-height: 1.45;
     }
-    .sticky a::after { content: ""; }
     .sticky a:hover { transform: translateY(-2px); }
 
     @media (max-width: 380px) {
@@ -1744,18 +1713,18 @@
             <li>
               <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
                   <path d="M7 24C2 10 14 6 26 6c0 12-4 22-16 18M7 27 23 11M13 21v-8m0 8h8" />
-                </svg></span><span><strong>पारंपरिक</strong><small>Ayurvedic herbs</small></span>
+                </svg></span><span><strong>6</strong><small>Herbs</small></span>
             </li>
             <li>
               <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
                   <path d="m6 10 10-5 10 5v13l-10 5-10-5Zm0 0 10 5 10-5M16 15v13M11 7.5l10 5" />
-                </svg></span><span><strong>सुविधाजनक</strong><small>powder format</small></span>
+                </svg></span><span><strong>100%</strong><small>Ayurvedic</small></span>
             </li>
             <li>
               <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
                   <rect x="5" y="7" width="22" height="21" rx="3" />
                   <path d="M10 4v6m12-6v6M5 14h22m-16 7 3 3 7-7" />
-                </svg></span><span><strong>Daily Routine</strong><small>के लिए उपयोगी</small></span>
+                </svg></span><span><strong>0</strong><small>Chemicals</small></span>
             </li>
             <li>
               <span class="earcare-callout-icon" aria-hidden="true"><svg viewBox="0 0 32 32">
@@ -1924,17 +1893,22 @@
     </section>
 
     <section id="start-routine" class="final-cta">
-      <h2>जोड़ों की Daily Wellness के लिए <span class="accent">Relief Pro</span></h2>
-      <p><strong>Relief Pro Ayurvedic Herbal Powder</strong></p>
+      <h2>आज के खास फायदे</h2>
+      <p class="routine-note">जोड़ों की रोज़मर्रा की देखभाल आज से शुरू करें</p>
+      <p class="routine-product-name"><strong>Relief Pro Ayurvedic Herbal Powder</strong></p>
       <div class="routine-product">
+        <span class="routine-natural-badge">100% NATURAL</span>
+        <span class="routine-offer-badge">🔥 LIMITED TIME OFFER</span>
         <img class="routine-bottle" src="images/capsule.avif" alt="Relief Pro Herbal Powder bottle" loading="lazy"
           decoding="async" width="1280" height="1280" />
         <div class="offer-stickers" aria-label="Offer highlights">
-          <span>FAST DELIVERY<br />SUPPORT</span>
-          <span>DIET CHART<br />SUPPORT</span>
+          <span><span class="offer-icon" aria-hidden="true"><i class="fa-solid fa-truck-fast"></i></span>FAST DELIVERY<br />SUPPORT<small>Fast delivery support</small></span>
+          <span><span class="offer-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></span>DIET CHART<br />SUPPORT<small>Expert diet plan support</small></span>
           <span>DAILY<br />CARE</span>
         </div>
         <div class="routine-info">
+          <div class="routine-offer-item">◆ Special Discount</div>
+          <div class="routine-offer-item">▣ Fast Delivery Support</div>
           <div class="routine-rating"><span aria-hidden="true">👑</span><strong>Special Limited-Time Offer</strong></div>
           <div class="routine-trust" aria-label="82,000+ Customers का भरोसा">
             <span aria-hidden="true">⭐</span><strong>82,000+</strong><span>संतुष्ट ग्राहकों का भरोसा*</span>
@@ -2081,6 +2055,7 @@
     </div>
 
     <div class="sticky" id="order-sticky">
+      <span class="sticky-note"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i> Easy COD Available</span>
       <a href="#order-form">अभी ऑर्डर करें</a>
     </div>
 
